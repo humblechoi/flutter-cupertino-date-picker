@@ -13,13 +13,14 @@ const String MIN_DATETIME = '2010-05-12';
 const String MAX_DATETIME = '2021-11-25';
 const String INIT_DATETIME = '2019-05-17';
 
+//TODO init-datetime을 항상 현재 날짜로 바꿔줄것
 class _DatePickerBottomSheetState extends State<DatePickerBottomSheet> {
   bool _showTitle = true;
 
   DateTimePickerLocale _locale = DateTimePickerLocale.en_us;
-  List<DateTimePickerLocale> _locales = DateTimePickerLocale.values;
+  //List<DateTimePickerLocale> _locales = DateTimePickerLocale.values;
 
-  String _format = 'yyyy-MMMM-dd';
+  String _format = 'yyyy년-MMMM월-dd일';
   TextEditingController _formatCtrl = TextEditingController();
 
   DateTime _dateTime;
@@ -35,28 +36,28 @@ class _DatePickerBottomSheetState extends State<DatePickerBottomSheet> {
   Widget build(BuildContext context) {
     // create locale radio list
     List<Widget> radios = List<Widget>();
-    _locales.forEach((locale) {
-      radios.add(Container(
-        margin: EdgeInsets.only(right: 8.0),
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: <Widget>[
-            Radio(
-              value: locale,
-              groupValue: _locale,
-              onChanged: (value) {
-                setState(() {
-                  _locale = value;
-                });
-              },
-            ),
-            Text(locale
-                .toString()
-                .substring(locale.toString().indexOf('.') + 1)),
-          ],
-        ),
-      ));
-    });
+//    _locales.forEach((locale) {
+//      radios.add(Container(
+//        margin: EdgeInsets.only(right: 8.0),
+//        child: Row(
+//          mainAxisSize: MainAxisSize.min,
+//          children: <Widget>[
+//            Radio(
+//              value: locale,
+//              groupValue: _locale,
+//              onChanged: (value) {
+//                setState(() {
+//                  _locale = value;
+//                });
+//              },
+//            ),
+//            Text(locale
+//                .toString()
+//                .substring(locale.toString().indexOf('.') + 1)),
+//          ],
+//        ),
+//      ));
+//    });
 
     TextStyle hintTextStyle =
         Theme.of(context).textTheme.subhead.apply(color: Color(0xFF999999));
@@ -67,47 +68,6 @@ class _DatePickerBottomSheetState extends State<DatePickerBottomSheet> {
         child: Column(
           children: <Widget>[
             // min datetime hint
-            Padding(
-              padding: EdgeInsets.only(bottom: 8.0),
-              child: Row(
-                children: <Widget>[
-                  Container(
-                    width: 115.0,
-                    child: Text('min DateTime:', style: hintTextStyle),
-                  ),
-                  Text(MIN_DATETIME,
-                      style: Theme.of(context).textTheme.subhead),
-                ],
-              ),
-            ),
-
-            // max datetime hint
-            Padding(
-              padding: EdgeInsets.only(bottom: 8.0),
-              child: Row(
-                children: <Widget>[
-                  Container(
-                      width: 115.0,
-                      child: Text('max DateTime:', style: hintTextStyle)),
-                  Text(MAX_DATETIME,
-                      style: Theme.of(context).textTheme.subhead),
-                ],
-              ),
-            ),
-
-            // init datetime hint
-            Padding(
-              padding: EdgeInsets.only(bottom: 8.0),
-              child: Row(
-                children: <Widget>[
-                  Container(
-                      width: 115.0,
-                      child: Text('init DateTime:', style: hintTextStyle)),
-                  Text(INIT_DATETIME,
-                      style: Theme.of(context).textTheme.subhead),
-                ],
-              ),
-            ),
 
             // show title widget checkbox
             Row(
@@ -138,18 +98,18 @@ class _DatePickerBottomSheetState extends State<DatePickerBottomSheet> {
               },
             ),
 
-            // locale check radio group
-            Container(
-              width: double.infinity,
-              margin: EdgeInsets.only(top: 16.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Text('Locale: '),
-                  Wrap(direction: Axis.horizontal, children: radios)
-                ],
-              ),
-            ),
+//            // locale check radio group
+//            Container(
+//              width: double.infinity,
+//              margin: EdgeInsets.only(top: 16.0),
+//              child: Column(
+//                crossAxisAlignment: CrossAxisAlignment.start,
+//                children: <Widget>[
+//                  Text('Locale: '),
+//                  Wrap(direction: Axis.horizontal, children: radios)
+//                ],
+//              ),
+//            ),
 
             // selected date
             Container(
@@ -186,7 +146,7 @@ class _DatePickerBottomSheetState extends State<DatePickerBottomSheet> {
     DatePicker.showDatePicker(
       context,
       pickerTheme: DateTimePickerTheme(
-        showTitle: _showTitle,
+        showTitle: false,
         confirm: Text('custom Done', style: TextStyle(color: Colors.red)),
         cancel: Text('custom cancel', style: TextStyle(color: Colors.cyan)),
       ),

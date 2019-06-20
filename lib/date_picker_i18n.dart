@@ -40,7 +40,7 @@ const Map<DateTimePickerLocale, String> CANCEL = {
   DateTimePickerLocale.zh_cn: '取消',
   DateTimePickerLocale.pt_br: 'Cancelar',
   DateTimePickerLocale.bn: 'বাতিল',
-   DateTimePickerLocale.ar: 'ألغاء',
+  DateTimePickerLocale.ar: 'ألغاء',
 };
 
 const List<String> DEFAULT_MONTH = [
@@ -60,18 +60,18 @@ const List<String> DEFAULT_MONTH = [
 
 /// en_US
 const List<String> EN_US_MONTHS = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December"
+  "1",
+  "2",
+  "3",
+  "4",
+  "5",
+  "6",
+  "7",
+  "8",
+  "9",
+  "10",
+  "11",
+  "12",
 ];
 
 /// es
@@ -153,7 +153,6 @@ const List<String> AR_MONTHS = [
   "تشرين الثاني",
   "كانون الأول"
 ];
-
 
 const Map<DateTimePickerLocale, List<String>> MONTHS = {
   DateTimePickerLocale.en_us: EN_US_MONTHS,
@@ -252,8 +251,7 @@ const List<String> BN_WEEKS_SHORT = [
   "শনি",
 ];
 
-
-/// ar weeks 
+/// ar weeks
 const List<String> AR_WEEKS = [
   "الأثنين",
   "الثلاثاء",
@@ -271,7 +269,6 @@ const Map<DateTimePickerLocale, List<String>> WEEKS_FULL = {
   DateTimePickerLocale.es: ES_WEEKS,
   DateTimePickerLocale.bn: BN_WEEKS_FULL,
   DateTimePickerLocale.ar: AR_WEEKS,
-
 };
 
 const Map<DateTimePickerLocale, List<String>> WEEKS_SHORT = {
