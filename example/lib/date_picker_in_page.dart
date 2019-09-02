@@ -15,7 +15,7 @@ class DatePickerInPage extends StatefulWidget {
 const String MIN_DATETIME = '2010-05-12';
 const String MAX_DATETIME = '2021-11-25';
 const String INIT_DATETIME = '2019-05-17';
-const String DATE_FORMAT = 'MM月|d日,yyyy年';
+const String DATE_FORMAT = 'MM월|d일,yyyy년';
 
 class _DatePickerInPageState extends State<DatePickerInPage> {
   DateTime _dateTime;
@@ -38,110 +38,110 @@ class _DatePickerInPageState extends State<DatePickerInPage> {
         child: Column(
           children: <Widget>[
             // min datetime hint
-            Padding(
-              padding: EdgeInsets.only(bottom: 8.0),
-              child: Row(
-                children: <Widget>[
-                  Container(
-                    width: 115.0,
-                    child: Text('min DateTime:', style: hintTextStyle),
-                  ),
-                  Text(MIN_DATETIME,
-                      style: Theme.of(context).textTheme.subhead),
-                ],
-              ),
-            ),
-
-            // max datetime hint
-            Padding(
-              padding: EdgeInsets.only(bottom: 8.0),
-              child: Row(
-                children: <Widget>[
-                  Container(
-                      width: 115.0,
-                      child: Text('max DateTime:', style: hintTextStyle)),
-                  Text(MAX_DATETIME,
-                      style: Theme.of(context).textTheme.subhead),
-                ],
-              ),
-            ),
-
-            // init datetime hint
-            Padding(
-              padding: EdgeInsets.only(bottom: 8.0),
-              child: Row(
-                children: <Widget>[
-                  Container(
-                    width: 115.0,
-                    child: Text('init DateTime:', style: hintTextStyle),
-                  ),
-                  Text(INIT_DATETIME,
-                      style: Theme.of(context).textTheme.subhead),
-                ],
-              ),
-            ),
-
-            // date format
-            Padding(
-              padding: EdgeInsets.only(bottom: 8.0),
-              child: Row(
-                children: <Widget>[
-                  Container(
-                    width: 115.0,
-                    child: Text('Date Format:', style: hintTextStyle),
-                  ),
-                  Text(DATE_FORMAT, style: Theme.of(context).textTheme.subhead),
-                ],
-              ),
-            ),
-
-            // date picker theme
-            GestureDetector(
-              onTap: () {
-                showDialog(
-                  context: context,
-                  builder: (_) => new AlertDialog(
-                        titlePadding: EdgeInsets.only(left: 16.0, top: 16.0),
-                        title: new Text("DateTimePickerTheme"),
-                        contentPadding: EdgeInsets.all(16.0),
-                        content: new Text(
-                          '''
-DateTimePickerTheme(
-        backgroundColor: Color(0xFF80cbc4),
-        cancelTextStyle: TextStyle(color: Colors.white),
-        confirmTextStyle: TextStyle(color: Colors.black),
-        itemTextStyle: TextStyle(color: Colors.deepOrange),
-        pickerHeight: 300.0,
-        titleHeight: 24.0,
-        itemHeight: 30.0,
-)
-                    ''',
-                          style: TextStyle(fontSize: 14.0),
-                        ),
-                        actions: <Widget>[
-                          new FlatButton(
-                            child: new Text("OK"),
-                            onPressed: () {
-                              Navigator.of(context).pop();
-                            },
-                          )
-                        ],
-                      ),
-                );
-              },
-              child: Padding(
-                padding: EdgeInsets.only(bottom: 8.0),
-                child: Row(
-                  children: <Widget>[
-                    Container(
-                      child:
-                          Text('DateTimePickerTheme  ', style: hintTextStyle),
-                    ),
-                    Icon(Icons.remove_red_eye, color: Color(0xFF03a9f4)),
-                  ],
-                ),
-              ),
-            ),
+//            Padding(
+//              padding: EdgeInsets.only(bottom: 8.0),
+//              child: Row(
+//                children: <Widget>[
+//                  Container(
+//                    width: 115.0,
+//                    child: Text('min DateTime:', style: hintTextStyle),
+//                  ),
+//                  Text(MIN_DATETIME,
+//                      style: Theme.of(context).textTheme.subhead),
+//                ],
+//              ),
+//            ),
+//
+//            // max datetime hint
+//            Padding(
+//              padding: EdgeInsets.only(bottom: 8.0),
+//              child: Row(
+//                children: <Widget>[
+//                  Container(
+//                      width: 115.0,
+//                      child: Text('max DateTime:', style: hintTextStyle)),
+//                  Text(MAX_DATETIME,
+//                      style: Theme.of(context).textTheme.subhead),
+//                ],
+//              ),
+//            ),
+//
+//            // init datetime hint
+//            Padding(
+//              padding: EdgeInsets.only(bottom: 8.0),
+//              child: Row(
+//                children: <Widget>[
+//                  Container(
+//                    width: 115.0,
+//                    child: Text('init DateTime:', style: hintTextStyle),
+//                  ),
+//                  Text(INIT_DATETIME,
+//                      style: Theme.of(context).textTheme.subhead),
+//                ],
+//              ),
+//            ),
+//
+//            // date format
+//            Padding(
+//              padding: EdgeInsets.only(bottom: 8.0),
+//              child: Row(
+//                children: <Widget>[
+//                  Container(
+//                    width: 115.0,
+//                    child: Text('Date Format:', style: hintTextStyle),
+//                  ),
+//                  Text(DATE_FORMAT, style: Theme.of(context).textTheme.subhead),
+//                ],
+//              ),
+//            ),
+//
+//            // date picker theme
+//            GestureDetector(
+//              onTap: () {
+//                showDialog(
+//                  context: context,
+//                  builder: (_) => new AlertDialog(
+//                    titlePadding: EdgeInsets.only(left: 16.0, top: 16.0),
+//                    title: new Text("DateTimePickerTheme"),
+//                    contentPadding: EdgeInsets.all(16.0),
+//                    content: new Text(
+//                      '''
+//DateTimePickerTheme(
+//        backgroundColor: Color(0xFF80cbc4),
+//        cancelTextStyle: TextStyle(color: Colors.white),
+//        confirmTextStyle: TextStyle(color: Colors.black),
+//        itemTextStyle: TextStyle(color: Colors.deepOrange),
+//        pickerHeight: 300.0,
+//        titleHeight: 24.0,
+//        itemHeight: 30.0,
+//)
+//                    ''',
+//                      style: TextStyle(fontSize: 14.0),
+//                    ),
+//                    actions: <Widget>[
+//                      new FlatButton(
+//                        child: new Text("OK"),
+//                        onPressed: () {
+//                          Navigator.of(context).pop();
+//                        },
+//                      )
+//                    ],
+//                  ),
+//                );
+//              },
+//              child: Padding(
+//                padding: EdgeInsets.only(bottom: 8.0),
+//                child: Row(
+//                  children: <Widget>[
+//                    Container(
+//                      child:
+//                          Text('DateTimePickerTheme  ', style: hintTextStyle),
+//                    ),
+//                    Icon(Icons.remove_red_eye, color: Color(0xFF03a9f4)),
+//                  ],
+//                ),
+//              ),
+//            ),
 
             // date picker widget
             Container(
@@ -152,11 +152,11 @@ DateTimePickerTheme(
                 initialDateTime: DateTime.parse(INIT_DATETIME),
                 dateFormat: DATE_FORMAT,
                 pickerTheme: DateTimePickerTheme(
-                  backgroundColor: Color(0xFFb2dfdb),
+                  backgroundColor: Colors.transparent,
                   cancelTextStyle: TextStyle(color: Colors.white),
                   confirmTextStyle: TextStyle(color: Colors.black),
                   itemTextStyle: TextStyle(color: Colors.deepOrange),
-                  pickerHeight: 300.0,
+                  pickerHeight: 100.0,
                   titleHeight: 24.0,
                   itemHeight: 30.0,
                 ),
