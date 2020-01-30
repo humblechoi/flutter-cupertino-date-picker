@@ -25,7 +25,7 @@ class DatePickerWidget extends StatefulWidget {
     this.onCancel,
     this.onChange,
     this.onConfirm,
-    this.confirmColor,
+    this.confirmColor = Colors.green,
   }) : super(key: key) {
     DateTime minTime = minDateTime ?? DateTime.parse(DATE_PICKER_MIN_DATETIME);
     DateTime maxTime = maxDateTime ?? DateTime.parse(DATE_PICKER_MAX_DATETIME);

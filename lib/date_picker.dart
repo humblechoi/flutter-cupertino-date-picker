@@ -49,6 +49,7 @@ class DatePicker {
     DateVoidCallback onCancel,
     DateValueCallback onChange,
     DateValueCallback onConfirm,
+        Color confirmColor,
   }) {
     // handle the range of datetime
     if (minDateTime == null) {
@@ -79,6 +80,7 @@ class DatePicker {
         onCancel: onCancel,
         onChange: onChange,
         onConfirm: onConfirm,
+          confirmColor: confirmColor,
         theme: Theme.of(context, shadowThemeOnly: true),
         barrierLabel:
             MaterialLocalizations.of(context).modalBarrierDismissLabel,
@@ -95,6 +97,7 @@ class _DatePickerRoute<T> extends PopupRoute<T> {
     this.dateFormat,
     this.locale,
     this.pickerMode,
+    this.confirmColor,
     this.pickerTheme,
     this.onCancel,
     this.onChange,
@@ -112,6 +115,7 @@ class _DatePickerRoute<T> extends PopupRoute<T> {
   final VoidCallback onCancel;
   final DateValueCallback onChange;
   final DateValueCallback onConfirm;
+  final Color confirmColor;
 
   final ThemeData theme;
 
@@ -180,6 +184,7 @@ class _DatePickerComponent extends StatelessWidget {
           onCancel: route.onCancel,
           onChange: route.onChange,
           onConfirm: route.onConfirm,
+            confirmColor: route.confirmColor,
         );
         break;
       case DateTimePickerMode.time:
