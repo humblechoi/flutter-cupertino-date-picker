@@ -25,6 +25,7 @@ class DatePickerWidget extends StatefulWidget {
     this.onCancel,
     this.onChange,
     this.onConfirm,
+    this.confirmColor = Colors.blue,
   }) : super(key: key) {
     DateTime minTime = minDateTime ?? DateTime.parse(DATE_PICKER_MIN_DATETIME);
     DateTime maxTime = maxDateTime ?? DateTime.parse(DATE_PICKER_MAX_DATETIME);
@@ -35,6 +36,7 @@ class DatePickerWidget extends StatefulWidget {
   final String dateFormat;
   final DateTimePickerLocale locale;
   final DateTimePickerTheme pickerTheme;
+  final Color confirmColor;
 
   final DateVoidCallback onCancel;
   final DateValueCallback onChange, onConfirm;
@@ -52,6 +54,7 @@ class _DatePickerWidgetState extends State<DatePickerWidget> {
 
   Map<String, FixedExtentScrollController> _scrollCtrlMap;
   Map<String, List<int>> _valueRangeMap;
+
 
   bool _isChangeDateRange = false;
 
@@ -128,9 +131,10 @@ class _DatePickerWidgetState extends State<DatePickerWidget> {
               '확인',
               style: TextStyle(color: Colors.white),
             ),
-            color: Color.fromARGB(255, 69, 193, 170),
+            color: widget.confirmColor,
             onPressed: _onPressedConfirm,
-          )
+          ),
+
         ],
       ),
     );
@@ -220,7 +224,7 @@ class _DatePickerWidgetState extends State<DatePickerWidget> {
     return Expanded(
       flex: 1,
       child: Container(
-        padding: EdgeInsets.all(8.0),
+        padding: EdgeInsets.all(5),
         height: widget.pickerTheme.pickerHeight,
         decoration: BoxDecoration(color: widget.pickerTheme.backgroundColor),
         child: CupertinoPicker.builder(
